@@ -247,6 +247,46 @@ export default {
            "Year":"1970-01-01",
            "Origin":"USA"
         }
+    ],
+    listing: [
+      {
+         "id": 1,
+         "name":"hamburger",
+         "description":"A joint that sell burgers",
+         "hours":"10:00 AM to 10:00 PM",
+         "address": "185 that street",
+      },
+      {
+         "id": 2,
+         "name":"taco",
+         "description":"A joint that sell tacos",
+         "hours":"10:00 AM to 10:00 PM",
+         "address": "285 that street",
+      },
+      {
+         "id": 3,
+         "name":"BBQ",
+         "description":"A joint that sell BBQ",
+         "hours":"10:00 AM to 10:00 PM",
+         "address": "385 that street",
+      },
+      {
+         "id": 4,
+         "name":"pizza",
+         "description":"A joint that sell pizza",
+         "hours":"10:00 AM to 10:00 PM",
+         "address": "485 that street",
+      },
+      {
+         "id": 5,
+         "name":"cpffee",
+         "description":"A joint that sell coffee",
+         "hours":"10:00 AM to 10:00 PM",
+         "address": "585 that street",
+      }
+    ],
+    map: [
+
     ]
   };
   

@@ -1,12 +1,24 @@
+.App {
+  text-align: center;
+}
+
 .card-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
+.listing-container {
+  margin: 50px;
+}
+
 .card {
   width: 20vw;
   margin: 25px;
+}
+
+.listing-card {
+  margin: 25px
 }
 
 a {
@@ -37,4 +49,16 @@ ul {
 
 .car-paper {
   padding: 50px;
+}
+
+.listing-paper {
+  padding: 50px
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 50%;
 }
