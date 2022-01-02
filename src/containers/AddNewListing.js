@@ -1,11 +1,18 @@
 import { connect } from "react-redux";
-import AdminView from "../components/AdminView";
 import AddNewListing from "../components/AddNewListing";
+import { addListing } from "../redux/actions";
 
 const mapStateToProps = (state) => {
     return {
-        cars: state.cars
+        user: state.user,
+        listing: state.listing
     }
 }
 
-export default connect(mapStateToProps)(AddNewListing)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addListing: (aListing) => dispatch(addListing(aListing))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(AddNewListing)

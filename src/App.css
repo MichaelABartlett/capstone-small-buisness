@@ -62,3 +62,19 @@ ul {
   margin: 50px auto;
   width: 50%;
 }
+
+.icon {
+  font-size: medium !important;
+}
+
+.icon:hover {
+  cursor: pointer
+}
+
+.text-gray {
+  color: gray
+}
+
+.text-red {
+  color: red
+}

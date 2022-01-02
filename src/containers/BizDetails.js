@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import BizDetails from "../components/BizDetails";
-import Car from '../components/Car'
 
 const mapStateToProps = (state) => {
     return {

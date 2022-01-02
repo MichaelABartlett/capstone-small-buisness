@@ -1,5 +1,4 @@
 export default {
-    // Add user property here
     user: [
       {
          username: 'Moto-X-Man',
@@ -252,7 +251,7 @@ export default {
       {
          "id": 1,
          "name":"hamburger",
-         "description":"A joint that sell burgers",
+         "description":"A joint that sell burgers, nothing but the best is all we serve at our facility  it is all good all day every day of the year and never gets old",
          "hours":"10:00 AM to 10:00 PM",
          "address": "185 that street",
       },
@@ -279,7 +278,7 @@ export default {
       },
       {
          "id": 5,
-         "name":"cpffee",
+         "name":"coffee",
          "description":"A joint that sell coffee",
          "hours":"10:00 AM to 10:00 PM",
          "address": "585 that street",
