@@ -26,7 +26,7 @@ const Listing = (props) => {
                         <TableCell>Description</TableCell>
                         <TableCell>Hours</TableCell>
                         <TableCell>Address</TableCell>
-                        <TableCell>other</TableCell>
+                        {/* <TableCell>Delete</TableCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -40,11 +40,11 @@ const Listing = (props) => {
                         <TableCell>{singleListing["description"]}</TableCell>
                         <TableCell>{singleListing["hours"]}</TableCell>
                         <TableCell>{singleListing["address"]}</TableCell>
-                        <TableCell>
+                        {/* <TableCell>
                             <DeleteIcon
                                 onClick={() => {props.removeListing(idx)}}
                                 className="icon text-red" />
-                        </TableCell>
+                        </TableCell> */}
                     </TableRow>
                 ))}
                 </TableBody>

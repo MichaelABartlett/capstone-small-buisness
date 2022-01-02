@@ -23,8 +23,12 @@ const Navigation = () => {
                     <li className="nav-list-item">
                         <Link to="/add-new-listing">Add New Listing</Link>
                     </li>
-                    <li className="nav-list-item">
-                        <Link to="/dashboard">LOGOUT</Link>
+                    <li className="nav-list-item"
+                        onClick={() => {
+                            document.cookie = "loggedIn="
+                            window.location.replace("/")
+                        }}>
+                        Logout
                     </li>
                 </ul>
             </Toolbar>
