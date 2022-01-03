@@ -9,12 +9,25 @@ import {
     TableRow
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
+import cookie from 'cookie'
 
 
 const Listing = (props) => {
     const { listing , user } = props;
+
+    console.log('cookie: ', cookie.parse(document.cookie))
     console.log('listing: ', listing)
     console.log('user: ', user)
+    const block = ""
+
+    const cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+
+    console.log('LoggedIn cookie', cookies.loggedIn)
+
+
     return (
         <Container maxWidth="lg" className="car-container">
             
@@ -26,7 +39,7 @@ const Listing = (props) => {
                         <TableCell>Description</TableCell>
                         <TableCell>Hours</TableCell>
                         <TableCell>Address</TableCell>
-                        {/* <TableCell>Delete</TableCell> */}
+                        {/* <TableCell>{cookie.parse(document.cookie) ? "Delete" : ""}</TableCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody>

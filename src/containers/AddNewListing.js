@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AddNewListing from "../components/AddNewListing";
+import AddNewListing from "../components/AddNewListing"
 import { addListing } from "../redux/actions";
 
 const mapStateToProps = (state) => {
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addListing: (aListing) => dispatch(addListing(aListing))
+        addListing : (listing) => dispatch(addListing(listing))
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(AddNewListing)
+export default connect( mapStateToProps ,mapDispatchToProps)(AddNewListing)

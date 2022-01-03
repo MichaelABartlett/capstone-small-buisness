@@ -1,7 +1,7 @@
-export const addListing = (aListing) => {
+export const addListing = (listing) => {
     return {
         type: 'ADD_LISTING',
-        value: aListing
+        value: listing
     }
 }
 
@@ -11,3 +11,4 @@ export const removeListing = (index) => {
         value: index
     }
 }
+

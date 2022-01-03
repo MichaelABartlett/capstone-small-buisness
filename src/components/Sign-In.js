@@ -21,7 +21,7 @@ class SignIn extends Component {
   login = (e) => {
     e.preventDefault()
     // set cookie here
-    document.cookie = "loggedIn=true;max-age=10"
+    document.cookie = "loggedIn=true;max-age=1000"
 
     window.location.replace("/")
   }
