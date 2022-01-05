@@ -2,8 +2,12 @@ export default {
     user: [
       {
          username: 'Moto-X-Man',
-         email: 'Moto-X-Man@example.com'
-     }
+         password: ''
+     },
+     {
+      username: 'Moto-X-Woman',
+      password: ''
+  }
     ],
     cars: [
         {

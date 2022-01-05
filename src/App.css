@@ -84,3 +84,21 @@ ul {
   background: #4caf50 !important;
   color: white !important;
 }
+.add-listing-form {
+  color: green;
+}
+
+.form {
+  width: 400px;
+}
+
+.new-listing-input {
+  width: 400px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.add-listing-page {
+  margin: 25px;
+}

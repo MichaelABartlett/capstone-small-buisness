@@ -1,6 +1,20 @@
 import { combineReducers } from 'redux'
 
-const user = (state = null) => state
+const user = (state = [], action) => {
+    switch(action.type) {
+       
+        case 'LOG_IN_USER':
+            console.log('inside reducer')
+            const updatedState = [...state, action.value]
+            return updatedState
+        case 'LOG_OUT_USER':
+            const newState = [ ...state ]
+            newState.splice(action.value, 1)
+            return newState
+        default:
+            return state
+    }
+}
 
 const cars = (state = []) => state
 

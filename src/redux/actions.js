@@ -12,3 +12,17 @@ export const removeListing = (index) => {
     }
 }
 
+export const logInUser = (user) => {
+    return {
+        type: 'LOG_IN_USER',
+        value: user
+    }
+}
+
+export const logOutUser = (user) => {
+    return {
+        type: 'LOG_OUT_USER',
+        value: ""
+    }
+}
+

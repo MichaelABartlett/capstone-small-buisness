@@ -1,9 +1,23 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, 
+import { AppBar, Toolbar,
     Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+// import cookie from 'cookie'
 
-const Navigation = () => {
+
+
+
+const Navigation = (props) => {
+
+    const cookies = document.cookie
+    .split(';')
+    .map(cookie => cookie.split('='))
+    .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+
+// console.log('LoggedIn cookie in nav', cookies.loggedIn)
+
+
+
     return (
         <AppBar position="relative">
             <Toolbar>
@@ -15,20 +29,20 @@ const Navigation = () => {
                         <Link to="/">Listing</Link>
                     </li>
                     <li className="nav-list-item">
-                        <Link to="/sign-in">Login</Link>
+                        <Link to="/sign-in">{!cookies.loggedIn ? "Log In" : ""}</Link>
                     </li>
-                    <li className="nav-list-item">
+                    {/* <li className="nav-list-item">
                         <Link to="/admin-view">Admin View</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-list-item">
-                        <Link to="/add-new-listing">Add New Listing</Link>
+                        <Link to="/add-new-listing">{cookies.loggedIn ? "Add New Listing" : ""}</Link>
                     </li>
                     <li className="nav-list-item" 
                         onClick={() => {
                             document.cookie = "loggedIn="
                             window.location.replace("/")
                         }}>
-                        Logout
+                        {cookies.loggedIn ? "Logout" : ""}
                     </li>
                 </ul>
             </Toolbar>

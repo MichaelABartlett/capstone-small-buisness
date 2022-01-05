@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container, Paper, Chip } from '@material-ui/core';
+import { Container, } from '@material-ui/core';
 
 
 const BizDetails = (props) => {
     const { listing } = props;
     const id = props.match.params.id
-    const aListing = listing.find(c => c.id == id)
+    const aListing = listing.find(c => c.id === id)
 
     return (
         <Container maxWidth="sm" className="car-container">

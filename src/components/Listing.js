@@ -18,14 +18,14 @@ const Listing = (props) => {
     console.log('cookie: ', cookie.parse(document.cookie))
     console.log('listing: ', listing)
     console.log('user: ', user)
-    const block = ""
+    // const block = ""
 
     const cookies = document.cookie
             .split(';')
             .map(cookie => cookie.split('='))
             .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
-    console.log('LoggedIn cookie', cookies.loggedIn)
+    // console.log('LoggedIn cookie', cookies.loggedIn)
 
 
     return (
@@ -39,7 +39,7 @@ const Listing = (props) => {
                         <TableCell>Description</TableCell>
                         <TableCell>Hours</TableCell>
                         <TableCell>Address</TableCell>
-                        {/* <TableCell>{cookie.parse(document.cookie) ? "Delete" : ""}</TableCell> */}
+                        <TableCell>{cookies.loggedIn ? "Delete" : ""}</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -53,11 +53,11 @@ const Listing = (props) => {
                         <TableCell>{singleListing["description"]}</TableCell>
                         <TableCell>{singleListing["hours"]}</TableCell>
                         <TableCell>{singleListing["address"]}</TableCell>
-                        {/* <TableCell>
-                            <DeleteIcon
+                        <TableCell>{cookies.loggedIn ? <DeleteIcon
                                 onClick={() => {props.removeListing(idx)}}
-                                className="icon text-red" />
-                        </TableCell> */}
+                                className="icon text-red" /> : null }
+                            
+                        </TableCell>
                     </TableRow>
                 ))}
                 </TableBody>
@@ -65,5 +65,6 @@ const Listing = (props) => {
         </Container>
     )
 }
+
 
 export default Listing
