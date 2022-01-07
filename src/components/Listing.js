@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
 import cookie from 'cookie'
-import LoggedUser from './LoggedUser'
+import LoggedUser from '../containers/LoggedUser'
 
 
 const Listing = (props) => {
@@ -34,7 +34,7 @@ const Listing = (props) => {
             <LoggedUser />
             <Container maxWidth="lg" className="car-container">
                 
-                {/* <h4>Welcome, {props.user[user.length-1].username}</h4> */}
+                <h4>Welcome, {props.user[user.length-1].username}</h4>
                 <Table>
                     <TableHead>
                         <TableRow>

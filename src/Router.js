@@ -6,7 +6,6 @@ import AddNewListing from './containers/AddNewListing'
 import AdminView from './containers/AdminView'
 import BizDetails from './containers/BizDetails'
 import cookie from 'cookie'
-import LoggedUser from './containers/LoggedUser'
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
@@ -33,7 +32,6 @@ const Router = () => {
             <Route path="/add-new-listing" component={AddNewListing} />
             <ProtectedRoute path="/admin-view" component={AdminView} />
             <Route path="/singleListing/:id" component={BizDetails} />
-            <Route path="/LoggedUser" component={LoggedUser} />
         </Switch>
     );
 };

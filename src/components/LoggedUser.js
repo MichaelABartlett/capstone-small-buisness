@@ -2,14 +2,14 @@ import React from 'react'
 
 
 
-const LoggedUser = (props) => {
+const LoggedUser = ({user}) => {
 
-    console.log('loggeduser props:', props)
+    console.log('loggeduser props in components:', user)
 
     return(
-        <h3>stuff</h3>
+        // <h3>stuff</h3>
         
-        // <h4>Welcome, {props.user[user.length-1].username}</h4>
+        <h4>Welcome, {user[user.length-1].username}</h4>
     )
     
 }
