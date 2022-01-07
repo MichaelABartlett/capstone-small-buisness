@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
 import cookie from 'cookie'
+import LoggedUser from './LoggedUser'
 
 
 const Listing = (props) => {
@@ -18,7 +19,7 @@ const Listing = (props) => {
     console.log('cookie: ', cookie.parse(document.cookie))
     console.log('listing: ', listing)
     console.log('user: ', user)
-    // const block = ""
+    console.log('listing props: ' , props)
 
     const cookies = document.cookie
             .split(';')
@@ -29,40 +30,43 @@ const Listing = (props) => {
 
 
     return (
-        <Container maxWidth="lg" className="car-container">
-            
-            <h4>Welcome, {props.user[0].username}</h4>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Description</TableCell>
-                        <TableCell>Hours</TableCell>
-                        <TableCell>Address</TableCell>
-                        <TableCell>{cookies.loggedIn ? "Delete" : ""}</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                {listing.map((singleListing, idx) => (
-                    <TableRow key={singleListing.id}>
-                        <TableCell component="th" scope="row">
-                            <Link to={`/singleListing/${singleListing.id}`}>
-                                {singleListing["name"]}
-                            </Link>
-                        </TableCell>
-                        <TableCell>{singleListing["description"]}</TableCell>
-                        <TableCell>{singleListing["hours"]}</TableCell>
-                        <TableCell>{singleListing["address"]}</TableCell>
-                        <TableCell>{cookies.loggedIn ? <DeleteIcon
-                                onClick={() => {props.removeListing(idx)}}
-                                className="icon text-red" /> : null }
-                            
-                        </TableCell>
-                    </TableRow>
-                ))}
-                </TableBody>
-            </Table>
-        </Container>
+        <div>
+            <LoggedUser />
+            <Container maxWidth="lg" className="car-container">
+                
+                {/* <h4>Welcome, {props.user[user.length-1].username}</h4> */}
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Description</TableCell>
+                            <TableCell>Hours</TableCell>
+                            <TableCell>Address</TableCell>
+                            <TableCell>{cookies.loggedIn ? "Delete" : ""}</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {listing.map((singleListing, idx) => (
+                        <TableRow key={singleListing.id}>
+                            <TableCell component="th" scope="row">
+                                <Link to={`/singleListing/${singleListing.id}`}>
+                                    {singleListing["name"]}
+                                </Link>
+                            </TableCell>
+                            <TableCell>{singleListing["description"]}</TableCell>
+                            <TableCell>{singleListing["hours"]}</TableCell>
+                            <TableCell>{singleListing["address"]}</TableCell>
+                            <TableCell>{cookies.loggedIn ? <DeleteIcon
+                                    onClick={() => {props.removeListing(idx)}}
+                                    className="icon text-red" /> : null }
+                                
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </Container>
+        </div>
     )
 }
 

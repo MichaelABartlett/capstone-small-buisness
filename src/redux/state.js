@@ -1,12 +1,14 @@
 export default {
     user: [
       {
-         username: 'Moto-X-Man',
-         password: ''
+         "username": 'Moto-X-Man',
+         "password": '',
+         "id": 1
      },
      {
-      username: 'Moto-X-Woman',
-      password: ''
+      "username": 'Moto-X-Woman',
+      "password": '',
+      "id": 2
   }
     ],
     cars: [

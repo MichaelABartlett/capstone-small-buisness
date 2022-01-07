@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router'
 import {
   TextField,
   Button,
   Container
 } from '@material-ui/core'
-import { logInUser } from '../redux/actions'
+
+
 
 class SignIn extends Component {
   constructor(props) {
     super(props)
+
+    console.log('props in sign in' , props)
 
     this.state = {
       username: '',
@@ -28,14 +30,16 @@ class SignIn extends Component {
     const payload = { ...this.state }
     payload.id = this.props.user.length + 1
     delete payload.open
-    console.log('THE USER payload: ', payload)
-    console.log('this.state.username: ', this.state.username)
-    console.log('this.state.password: ', this.state.password)
+    // console.log('THE USER payload: ', payload)
+    // console.log('this.state.username: ', this.state.username)
+    // console.log('this.state.password: ', this.state.password)
     document.cookie = "loggedIn=true;max-age=1000"
     this.props.logInUser(payload)
-    console.log('logInUser function: ', logInUser)
+    // console.log('logInUser function: ', logInUser)
    
-    window.location.replace("/")
+    // window.location.replace("/")
+    console.log('this pops: ', this.props)
+    this.props.history.push('/')
   }
   
   render() {
