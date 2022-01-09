@@ -26,15 +26,17 @@ const Listing = (props) => {
             .map(cookie => cookie.split('='))
             .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
-    // console.log('LoggedIn cookie', cookies.loggedIn)
+    console.log('LoggedIn cookie', cookies.loggedIn)
 
 
     return (
+        
         <div>
-            <LoggedUser />
+            <div>
+                {cookies.loggedIn ? <LoggedUser/> : null}
+            </div>
             <Container maxWidth="lg" className="car-container">
                 
-                <h4>Welcome, {props.user[user.length-1].username}</h4>
                 <Table>
                     <TableHead>
                         <TableRow>

@@ -102,3 +102,10 @@ ul {
 .add-listing-page {
   margin: 25px;
 }
+
+.loggedUser {
+  display: flex;
+  height: 25px;
+  width: 100%;
+  background-color: grey;
+}

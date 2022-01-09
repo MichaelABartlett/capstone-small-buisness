@@ -4,7 +4,6 @@ const user = (state = [], action) => {
     switch(action.type) {
        
         case 'LOG_IN_USER':
-            console.log('inside reducer')
             const updatedState = [...state, action.value]
             return updatedState
         case 'LOG_OUT_USER':

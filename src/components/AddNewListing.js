@@ -1,4 +1,13 @@
 import React, { Component } from 'react'
+// import cookie from 'cookie'
+
+import LoggedUser from '../containers/LoggedUser'
+
+
+const cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
 class AddNewListing extends Component {
     constructor(props){
@@ -31,11 +40,14 @@ class AddNewListing extends Component {
 
     }
 
+    
+
     render () {
         console.log('props.listing: ', this.props.listing)
         console.log('props.user: ',this.props.user)
         return (
             <div className='add-listing-page' >
+                {cookies.loggedIn ? <LoggedUser/> : null}
                 <h2>Add a new listing</h2>
                 <h4>Name: {this.state.name}</h4>
                 <h4>Description: {this.state.description}</h4>

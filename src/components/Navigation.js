@@ -14,7 +14,7 @@ const Navigation = (props) => {
     .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
     console.log('navigation props: ', props)
-// console.log('LoggedIn cookie in nav', cookies.loggedIn)
+    console.log('LoggedIn cookie in nav', cookies.loggedIn)
 
 
 

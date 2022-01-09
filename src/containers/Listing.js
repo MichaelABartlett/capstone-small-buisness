@@ -3,7 +3,9 @@ import Listing from '../components/Listing'
 import { removeListing} from '../redux/actions'
 
 const mapStateToProps = (state) => {
+    console.log('inside listing mstp');
     return {
+        
         user: state.user,
         listing: state.listing
     }

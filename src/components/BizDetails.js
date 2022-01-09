@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container, } from '@material-ui/core';
+import GoogleMap from './GoogleMap';
 
 
 const BizDetails = (props) => {
     const { listing } = props;
     const id = props.match.params.id
-    const aListing = listing.find(c => c.id === id)
+    const aListing = listing.find(c => c.id == id)
 
     return (
         <Container maxWidth="sm" className="car-container">
@@ -17,7 +18,7 @@ const BizDetails = (props) => {
                     <h3>{aListing.description}</h3>
                 </div>
                 <div>
-                    {/* google map image */}
+                    <GoogleMap />
                 </div>
                 {/* <Paper className="car-paper">
                     <h2>{aListing.name}</h2>

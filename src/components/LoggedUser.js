@@ -9,7 +9,7 @@ const LoggedUser = ({user}) => {
     return(
         // <h3>stuff</h3>
         
-        <h4>Welcome, {user[user.length-1].username}</h4>
+        <h4 className='loggedUser'>Logged in as, {user[user.length-1].username}</h4>
     )
     
 }
