@@ -13,8 +13,8 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 const AdminView = (props) => {
     const { listing , user } = props;
-    console.log('listing: ', listing)
-    console.log('user: ', user)
+    // console.log('listing: ', listing)
+    // console.log('user: ', user)
     return (
         <Container maxWidth="lg" className="car-container">
             
@@ -53,19 +53,6 @@ const AdminView = (props) => {
     )
 }
 
-
-
-////////
-// const AdminView = (props, idx) => {
-//     return (
-//         <div>
-//             <h2>Admin View page</h2>
-//             <DeleteIcon
-//                 onClick={() => {props.removeListing(idx)}}
-//                 className="icon text-red" />
-//         </div>
-//     )
-// }
 
 export default AdminView
 

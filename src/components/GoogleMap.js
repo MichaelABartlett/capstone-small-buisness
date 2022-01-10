@@ -2,7 +2,6 @@ import React from 'react'
 
 
 import cookie from 'cookie'
-import { Loader } from "@googlemaps/js-api-loader"
 import { GoogleMap, Marker, useLoadScript} from '@react-google-maps/api'
 
 require('dotenv').config();
@@ -18,13 +17,6 @@ const mapContainerStyle = {
 
 const GoogleMapImg = (props) => {
     const { listing , user, aListing } = props;
-    // let latlocation = parseInt(aListing.lat);
-    // let lnglocation = parseInt(aListing.lng);
-
-    // const center = {
-    //     lat: 30.662680,
-    //     lng: -97.923860,
-    // }
 
     const markSpot = {position:{lat: parseFloat(aListing.lat), lng: parseFloat(aListing.lng)}}
     
@@ -42,7 +34,6 @@ const GoogleMapImg = (props) => {
     console.log('user: ', user)
     console.log('google maps props: ' , props)
     console.log('aListing: ', aListing)
-    // console.log('lat in aListingg: ', latlocation)
 
     const cookies = document.cookie
             .split(';')

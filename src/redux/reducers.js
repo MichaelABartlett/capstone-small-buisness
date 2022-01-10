@@ -15,7 +15,6 @@ const user = (state = [], action) => {
     }
 }
 
-const cars = (state = []) => state
 
 const map = (state = []) => state
 
@@ -36,4 +35,4 @@ const listing = (state = [], action) => {
 
 
 
-export default combineReducers({ user, cars, listing, map })
+export default combineReducers({ user, listing, map })

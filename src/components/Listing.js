@@ -16,10 +16,10 @@ import LoggedUser from '../containers/LoggedUser'
 const Listing = (props) => {
     const { listing , user } = props;
 
-    console.log('cookie: ', cookie.parse(document.cookie))
-    console.log('listing: ', listing)
-    console.log('user: ', user)
-    console.log('listing props: ' , props)
+    // console.log('cookie: ', cookie.parse(document.cookie))
+    // console.log('listing: ', listing)
+    // console.log('user: ', user)
+    // console.log('listing props: ' , props)
 
     const cookies = document.cookie
             .split(';')

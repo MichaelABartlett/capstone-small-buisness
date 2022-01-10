@@ -39,7 +39,6 @@ class AddNewListing extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
-        // const location = '14125 W State Hwy 29 Ste B-201, Liberty Hill, TX 78642'
         
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
             params:{
@@ -50,9 +49,9 @@ class AddNewListing extends Component {
         .then(function(response, lat, lng){
             lat = response.data.results[0].geometry.location.lat;
             lng = response.data.results[0].geometry.location.lng;
-            console.log('response in axois fetch', response)
-            console.log('lat in axios: ', lat)
-            console.log('lng in axios: ', lng)
+            // console.log('response in axois fetch', response)
+            // console.log('lat in axios: ', lat)
+            // console.log('lng in axios: ', lng)
             payload.lat = lat;
             payload.lng = lng;
         })
@@ -61,15 +60,16 @@ class AddNewListing extends Component {
         })
         payload.id = (this.props.listing.length + 1)
         delete payload.open
-        console.log("THE LISTING", payload)
+        // console.log("THE LISTING", payload)
         this.props.addListing(payload)
+        this.setState({name: "", description: "", hours: "", address: ""})
 
     }
 
 
     render () {
-        console.log('props.listing: ', this.props.listing)
-        console.log('props.user: ',this.props.user)
+        // console.log('props.listing: ', this.props.listing)
+        // console.log('props.user: ',this.props.user)
         return (
             <div className='add-listing-page' >
                 {cookies.loggedIn ? <LoggedUser/> : null}

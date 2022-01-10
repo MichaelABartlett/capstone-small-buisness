@@ -13,8 +13,8 @@ const Navigation = (props) => {
     .map(cookie => cookie.split('='))
     .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
-    console.log('navigation props: ', props)
-    console.log('LoggedIn cookie in nav', cookies.loggedIn)
+    // console.log('navigation props: ', props)
+    // console.log('LoggedIn cookie in nav', cookies.loggedIn)
 
 
 
@@ -31,9 +31,6 @@ const Navigation = (props) => {
                     <li className="nav-list-item">
                         <Link to="/sign-in">{!cookies.loggedIn ? "Log In" : ""}</Link>
                     </li>
-                    {/* <li className="nav-list-item">
-                        <Link to="/admin-view">Admin View</Link>
-                    </li> */}
                     <li className="nav-list-item">
                         <Link to="/add-new-listing">{cookies.loggedIn ? "Add New Listing" : ""}</Link>
                     </li>

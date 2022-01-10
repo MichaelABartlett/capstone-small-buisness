@@ -17,6 +17,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-// export default connect(mapStateToProps)(Listing)
 
 export default connect(mapStateToProps,mapDispatchToProps)(Listing)
