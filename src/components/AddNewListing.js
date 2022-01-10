@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 // import cookie from 'cookie'
 
+
 import LoggedUser from '../containers/LoggedUser'
+
+const axios = require('axios')
+require('dotenv').config();
 
 
 const cookies = document.cookie
@@ -18,7 +22,9 @@ class AddNewListing extends Component {
             name : '',
             description : '',
             hours : '',
-            address : ''
+            address : '',
+            lat : '',
+            lng : ''
         }
     }
 
@@ -33,6 +39,26 @@ class AddNewListing extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
+        // const location = '14125 W State Hwy 29 Ste B-201, Liberty Hill, TX 78642'
+        
+        axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+            params:{
+                address:this.state.address,
+                key:process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+            }
+        })
+        .then(function(response, lat, lng){
+            lat = response.data.results[0].geometry.location.lat;
+            lng = response.data.results[0].geometry.location.lng;
+            console.log('response in axois fetch', response)
+            console.log('lat in axios: ', lat)
+            console.log('lng in axios: ', lng)
+            payload.lat = lat;
+            payload.lng = lng;
+        })
+        .catch(function(error){
+            console.log('error in axio fetch', error)
+        })
         payload.id = (this.props.listing.length + 1)
         delete payload.open
         console.log("THE LISTING", payload)
@@ -40,7 +66,6 @@ class AddNewListing extends Component {
 
     }
 
-    
 
     render () {
         console.log('props.listing: ', this.props.listing)
@@ -63,15 +88,6 @@ class AddNewListing extends Component {
                     <input type='submit' />
                 </form>
 
-                {/* <input id="name" placeholder='Name'/>
-                <br/>
-                <input id="address" placeholder='Description'/>
-                <br/>
-                <input id="hours (ex. 10:00AM - 10:00PM" placeholder='Hours'/>
-                <br/>
-                <input id="description" placeholder='Description'/>
-                <br/>
-                <button onClick={() => {this.props.addListing()}}>Save</button> */}
             </div>
         )
     }

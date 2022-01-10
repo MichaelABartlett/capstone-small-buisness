@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, } from '@material-ui/core';
-import GoogleMap from './GoogleMap';
+import GoogleMapImg from '../containers/GoogleMap';
 
 
 const BizDetails = (props) => {
@@ -18,16 +18,8 @@ const BizDetails = (props) => {
                     <h3>{aListing.description}</h3>
                 </div>
                 <div>
-                    <GoogleMap />
+                    <GoogleMapImg aListing={aListing} />
                 </div>
-                {/* <Paper className="car-paper">
-                    <h2>{aListing.name}</h2>
-                    {
-                        Object.keys(aListing).map((key, idx) => {
-                            return <Chip label={`${key}: ${aListing[key]}`}></Chip>
-                        })
-                    }
-                </Paper> */}
             </div>
         </Container>
 
